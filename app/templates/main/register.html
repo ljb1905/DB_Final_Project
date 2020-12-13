@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DATABASE PROJECT</title>
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/starter-template.css" rel="stylesheet">-
+
+</head>
+
+  <body>
+    <header>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">MR.LEE</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/mypage">MY PAGE</a></li>
+            <li><a href="/search">MOVIE SEARCH</a></li>
+            <li><a href="/recommendation">RECOMMENDATION MOVIE</a></li>
+            <li><a href="/register">REGISTER</a></li>
+            {%if 'user' in session%}
+            <li><a href='/logout'>LOGOUT</a></li>
+			{%else%}
+			<li><a href='/login'>LOGIN</a></li>
+            {%endif%}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    </header>
+    <div class="container">
+    <br/>
+      <div align="center">
+        <h1>Register</h1>
+          <form action="/register" method="POST">
+              <p>ID</p>
+              <input type="text" class="form-control" placeholder="111-11-1111" name="cid"/>
+              <p>Last Name</p>
+              <input type="text" class="form-control" placeholder="Yang" name="lname"/>
+              <p>First Name</p>
+              <input type="text" class="form-control" placeholder="Shang" name="fname"/>
+              <p>Address</p>
+              <input type="text" class="form-control" placeholder="123 Success Street" name="address"/>
+              <p>City</p>
+              <input type="text" class="form-control" placeholder="New York" name="city"/>
+              <p>State</p>
+              <input type="text" class="form-control" placeholder="NY" name="state"/>
+              <p>Zipcode</p>
+              <input type="text" class="form-control" placeholder="11790" name="zipcode"/>
+              <p>Telephone</p>
+              <input type="text" class="form-control" placeholder="516-632-8959" name="telephone"/>
+              <p>Email address</p>
+              <input type="text" class="form-control" placeholder="syang@ajou.ac.kr" name="eaddress"/>
+              <p>Card Number</p>
+              <input type="text" class="form-control" placeholder="1234-5678-1234-5678" name="cardnum"/>
+              <p>Rating</p>
+              <label><input type="radio" class="custom-control-input" name="crating" value=1>1</label>
+              <label><input type="radio" class="custom-control-input" name="crating" value=2>2</label>
+              <label><input type="radio" class="custom-control-input" name="crating" value=3>3</label>
+              <label><input type="radio" class="custom-control-input" name="crating" value=4>4</label>
+              <label><input type="radio" class="custom-control-input" name="crating" value=5>5</label>
+              <p>Account Number</p>
+              <input type="text" class="form-control" placeholder="3" name="accnum"/>
+              <p>Account Type</p>
+              <label><input type="radio" class="custom-control-input" name="atype" value="unlimited">unlimited</label>
+              <label><input type="radio" class="custom-control-input" name="atype" value=limited>limited</label>
+              <br/>
+              <button type="submit" class="btn btn-dark">Register</button>
+          </form>
+      </div>
+    </div>
+  </body>
+</html>
